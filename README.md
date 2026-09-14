@@ -1,2 +1,2 @@
 # CS526
-Repsoitory for CS526 Fall 2026
+Repository for CS526 Fall 2026
