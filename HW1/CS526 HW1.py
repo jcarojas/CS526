@@ -10,6 +10,12 @@ We will take a standard input text file of size n lines.
 
 from pathlib import Path
 
+def read_from_standard_in():
+    data = sys.stdin.read()
+    print(f"File Contents:\n{data}")
+
+
+
 def ask_for_file():
     while True:
         raw = input("Enter the full path of your text file: ").strip()
@@ -24,12 +30,15 @@ def ask_for_file():
         else:
             return path.resolve()
 
-file_path = ask_for_file()
 
-with open(file_path, "r") as file_object:
-    for line in file_object:
-        print(line.rstrip("\n"))
+def main():
+    file_path = ask_for_file()
+    with open(file_path, "r") as file_object:
+        for line in file_object:
+            print(line.rstrip("\n"))
 
+
+main()
 
 # The below program is used to take as an input a text file with n number of lines. The program will print each line in order. First, the program will need to know the full path of the text file. Since users may be using a mixture of Windows, Mac, and Linux, the program must be able to handle any variation of file paths. For this reason, we will use Path from the pathlib library. Path handles the differences between "/" and "\" in the file paths automatically. We define a function ask_for_file that will ask for the file path of the text file. The function will strip away an excess spaces. If the file path does not lead to a text file or if the file isn't found, an error message will be provided. If the file is simply not found, the program will print the working directory that Python is looking in, in an effort to assist the user with troubleshooting. The .expanduser() will allow the shorthand of "~" that refers to the home directory on Macs and Linux, and automatically include the path for the home directory if "~" is used. 
 # 
