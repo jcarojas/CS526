@@ -7,7 +7,7 @@ python throughout this course.
 
 I don't think that I have experience with algorithms or data structures, but I am excited to learn more!
 
-The below program is used to take as an input a text file with n number of lines. The program will print each line in 
+The attached program is used to take as an argument a text file with n number of lines. The program will print each line in 
 order. First, the program will need to know the full path of the text file. Since users may be using a mixture of 
 Windows, Mac, and Linux, the program must be able to handle any variation of file paths. For this reason, we will use 
 Path from the pathlib library. Path handles the differences between "/" and "\" in the file paths automatically. We define 
