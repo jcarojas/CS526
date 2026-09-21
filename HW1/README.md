@@ -26,25 +26,3 @@ iterate through each line of file_object and print all lines. The .strip("\n") w
 exists at the end of each line so that a blank line will not be printed after each line. The program will automatically 
 end once all lines in the file_object are iterated through. The with open() combination ensures that the file is closed 
 automatically once the changes have been completed or if an error occurs.
-
-from pathlib import Path
-
-def ask_for_file():
-    while True:
-        raw = input("Enter the full path of your text file: ").strip()
-        raw = raw.strip('"').strip("'")
-        path = Path(raw).expanduser()
-
-        if path.suffix.lower() != ".txt":
-            print("That's not a text file. Please try again!")
-        elif not path.is_file():
-            print(f"Couldn't find '{path}'.")
-            print(f"Python is looking in: {Path.cwd()}")
-        else:
-            return path.resolve()
-
-file_path = ask_for_file()
-
-with open(file_path, "r") as file_object:
-    for line in file_object:
-        print(line.rstrip("\n"))
