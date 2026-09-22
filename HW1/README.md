@@ -14,8 +14,8 @@ Path from the pathlib library. Path handles the differences between "/" and "\" 
 a function ask_for_file that will ask for the file path of the text file. The function will strip away an excess spaces. 
 If the file path does not lead to a text file or if the file isn't found, an error message will be provided. If the file 
 is simply not found, the program will print the working directory that Python is looking in, in an effort to assist the 
-user with troubleshooting. The .expanduser() will allow the shorthand of "~" that refers to the home directory on Macs 
-and Linux, and automatically include the path for the home directory if "~" is used. 
+user with troubleshooting. The .expanduser() will allow the shorthand of ~ that refers to the home directory on Macs 
+and Linux, and automatically include the path for the home directory if ~ is used. 
 
 If the file exists and is confirmed to be a text file, the function will return its full absolute path using the .resolve 
 method and save it under the variable file_path. This method automatically adds in the full file path specific to the 
