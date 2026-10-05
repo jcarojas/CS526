@@ -1,3 +1,1 @@
-this is read me for hw2
-
-Test for git 
+Problem 1: The primary advantage of utilizing a tail pointer in a linked list is that the time it takes to append a node at the end of a list is a constant O(1). You do not need to walk through the whole list to get to the last value, which would be O(n) for a linked list of n length. This tail pointer also provides easy access to the end of the list, which can be utilized for many different directives and helper functions in our program and driver.
