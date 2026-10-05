@@ -35,3 +35,11 @@ I created a DirectiveError class so that exceptions would interrupt the code alt
 I created functions called parse_index(token) and parse_value(token). Parse_index simply confirms that the argument passed through is a whole number or it raises an error. Additionally it returns the confirmed whole number as an integer. This function is called in the executive of any directives that utilize an index as an argument. Parse_value also confirms that the arguments is a whole number and then returns as an integer. If the argument is not a whole number, it remains as a string.
 
 I also created a warn function for troubleshooting purposes. This function prints the line number of any errors and the corresponding message. This function is utilized anytime there is an IndexError, or DirectiveError.
+
+
+
+Problem 3:
+
+(a)The base case of my function will be n = 0. When n = 0, then we return 1. We say that it is one step because when you are already at the top, there is only one way to finish: don't move. I also added a guard for cases in which n is negative. When n is negative, it returns 0. this is an important step in the function because otherwise it wouldn't know how to handle ways(1) through ways(2). ways(1) = ways(0) + ways(-1) + ways(-2) = 1 + 0 + 0 = 1.
+
+(b) If we climb only 1 or 2 steps a time, then the ways(n) function would produce the fibonacci sequence.
