@@ -9,7 +9,6 @@ class Node:
         self.value = value
         self.next = None
 
-
 class SinglyLinkedList:
     def __init__(self):
         self.head = None
@@ -47,14 +46,11 @@ class SinglyLinkedList:
             prev.next = node
             self.length += 1
 
-    # ---------- Read ----------
     def get(self, index):
-        """Return the value at the given position."""
         self._check_index(index)
         return self._node_at(index).value
 
     def find(self, value):
-        """Return the position of the first node holding value, or -1."""
         current = self.head
         position = 0
         while current:
@@ -67,16 +63,11 @@ class SinglyLinkedList:
     def __len__(self):
         return self.length
 
-    # ---------- Update ----------
-    def update(self, index, value):
-        """Replace the value at the given position."""
+     def update(self, index, value):
         self._check_index(index)
         self._node_at(index).value = value
 
-    # ---------- Delete ----------
     def delete(self, value):
-        """Remove the first node holding value.
-        Return True if a node was removed, False otherwise."""
         prev = None
         current = self.head
         while current:
@@ -88,17 +79,14 @@ class SinglyLinkedList:
         return False
 
     def delete_at(self, index):
-        """Remove the node at the given position and return its value."""
         self._check_index(index)
         prev = self._node_at(index - 1) if index > 0 else None
         current = prev.next if prev else self.head
         self._unlink(prev, current)
         return current.value
 
-    # ---------- Print ----------
-    def print_list(self):
-        """Print the list head to tail, e.g. 12 -> 3 -> 5 -> 2."""
-        if self.head is None:
+     def print_list(self):
+       if self.head is None:
             print("(empty)")
             return
         values = []
@@ -108,7 +96,6 @@ class SinglyLinkedList:
             current = current.next
         print(" -> ".join(values))
 
-    # ---------- Helpers ----------
     def _check_index(self, index):
         if index < 0 or index >= self.length:
             raise IndexError("index out of range")
@@ -120,7 +107,6 @@ class SinglyLinkedList:
         return current
 
     def _unlink(self, prev, current):
-        """Remove current from the list; prev is the node before it (or None)."""
         if prev is None:
             self.head = current.next
         else:
