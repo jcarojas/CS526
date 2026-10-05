@@ -32,3 +32,6 @@ WHOLE_NUMBER is a pattern matcher that checks and confirms whole numbers are bei
 
 I created a DirectiveError class so that exceptions would interrupt the code altogether, print a warning then continue to the next line. This also allows for practical usage while I am coding. If I encounter an issue with a directive that is unknown, it will be printed to me so that I can address. If I used a built-in like ValueError, it crashes loudly and will not be hidden as a warning. A blanket Exception would simply swallow it.
 
+I created functions called parse_index(token) and parse_value(token). Parse_index simply confirms that the argument passed through is a whole number or it raises an error. Additionally it returns the confirmed whole number as an integer. This function is called in the executive of any directives that utilize an index as an argument. Parse_value also confirms that the arguments is a whole number and then returns as an integer. If the argument is not a whole number, it remains as a string.
+
+I also created a warn function for troubleshooting purposes. This function prints the line number of any errors and the corresponding message. This function is utilized anytime there is an IndexError, or DirectiveError.
