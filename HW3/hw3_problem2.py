@@ -1,17 +1,11 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import sys
 
 def collect_substrings(s, found):
     if s == "" or s in found:
-        return  # nothing left, or already explored this substring
+        return
     found.add(s)
-    collect_substrings(s[:-1], found)  # drop the last character
-    collect_substrings(s[1:], found)   # drop the first character
+    collect_substrings(s[:-1], found)
+    collect_substrings(s[1:], found)
 
 def main():
     text = sys.stdin.readline().rstrip("\n")
