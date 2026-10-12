@@ -4,7 +4,15 @@ This problem involves parsing through the text file in standard input. Each line
 
 Problem 2:
 
-Problem 2 involves finding all possible substrings in a given string. 
+Problem 2 involves finding all possible substrings in a given string. The algorithm starts by assigned the contents of the text to a variable called text. Normally, assigning the entire contents of a text file to a variable uses up precious memory. However, since we are only expecting one line as input, we can ignore the memory usage. 
+
+We also create a set called found that holds all of the substrings. We use a set to collect all of the substrings instead of a list because searching for existence of an element in a set is much quicker than searching for existence of an element in a list. With a list, we would need to search through each element one by one (linear search), whereas a set is washable and can very quickly determine if an element exists inside of a set.
+
+The variable text is passed through a function to collect substrings along with the set of all substrings. If the variable text is empty string or if the string is found in the set, then it will return and exit the program. I added this step to optimize the time it takes to complete the program. Without adding this if statement, then the substring will go through all possible substring cases, even the ones that already were found.
+
+If a unique substring is found then the function will call itself and pass the text without the first character, and then call itself without the last character. This recursion allows it to find all possible substrings and avoid trying to add duplicates into the set. Even though you can add an element that exists already inside of a set, we utilize the set instead of a list to quickly search if the element inside exists already.
+
+The last step of the algorithm is to iterate through each element in the sorted version of the set. The sorted version will be in alphabetical order, which is required for this program. For each iterations, it prints the substring, then finally, it will print the total number of substrings found in the input string. 
 
 Problem 3:
 
