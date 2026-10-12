@@ -12,7 +12,7 @@ The variable text is passed through a function to collect substrings along with 
 
 If a unique substring is found then the function will call itself and pass the text without the first character, and then call itself without the last character. This recursion allows it to find all possible substrings and avoid trying to add duplicates into the set. Even though you can add an element that exists already inside of a set, we utilize the set instead of a list to quickly search if the element inside exists already.
 
-The last step of the algorithm is to iterate through each element in the sorted version of the set. The sorted version will be in alphabetical order, which is required for this program. For each iterations, it prints the substring, then finally, it will print the total number of substrings found in the input string. 
+The last step of the algorithm is to iterate through each element in the sorted version of the set. The sorted version will be in alphabetical order, which is required for this program. For each iterations, it prints the substring, then finally, it will print the total number of substrings found in the input string. We call the length of the set because it is already a value stored inside the set and it has O(1). We do this rather than keeping a variable that keeps a count of the length of the set.
 
 Problem 3:
 
