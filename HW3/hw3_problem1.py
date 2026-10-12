@@ -1,11 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[2]:
-
-
 import sys
-
 
 def is_palindrome(s):
     return s == s[::-1]
@@ -22,4 +15,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
