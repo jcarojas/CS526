@@ -1,15 +1,8 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import sys
 from fractions import Fraction
 
 ELIMINATED = "All Ghosts: were eliminated"
 NOT_ELIMINATED = "All Ghosts: were not eliminated"
-
 
 def line_through(p1, p2):
     (x1, y1), (x2, y2) = p1, p2
@@ -19,7 +12,6 @@ def line_through(p1, p2):
     intercept = y1 - slope * x1
     return slope, intercept
 
-
 def all_eliminated(lines):
     first_slope = lines[0][0]
     if any(slope != first_slope for slope, _ in lines):
@@ -27,14 +19,13 @@ def all_eliminated(lines):
     intercepts = [intercept for _, intercept in lines]
     return len(set(intercepts)) == len(intercepts)
 
-
 def parse(text):
     rows = text.strip().splitlines()
     n = int(rows[0])
 
     lines = []
     for row in rows[1:n + 1]:
-        _, bx, by, _, gx, gy = row.split()   # the 'B' and 'G' letters are skipped
+        _, bx, by, _, gx, gy = row.split()
         buster = (Fraction(bx), Fraction(by))
         ghost = (Fraction(gx), Fraction(gy))
         lines.append(line_through(buster, ghost))
@@ -42,7 +33,6 @@ def parse(text):
     if len(lines) != n:
         raise ValueError(f"expected {n} pairs, found {len(lines)}")
     return lines
-
 
 def main():
     try:
@@ -52,7 +42,6 @@ def main():
         sys.exit(1)
 
     print(ELIMINATED if all_eliminated(lines) else NOT_ELIMINATED)
-
 
 if __name__ == "__main__":
     main()
