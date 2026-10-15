@@ -1,3 +1,5 @@
+My test runs are all labeled problemX_testX 
+
 Problem 1:
 
 This problem involves parsing through the text file in standard input. Each line is converted to a variable called word. Then, the line is passed through a function to check if it's a palindrome. Checking for palindromality is quite simple. If the variable word is the same as word indexed backwards, then it is a palindrome. If the word is a palindrome, then it will print True, otherwise False. Then it will move onto the next word. A count is collected while the function goes through each line, adding 1 to the count if the word is a palindrome. At the end of the algorithm, the total count will be printed, which represents the total number of palindromes in the text.
@@ -16,6 +18,19 @@ The last step of the algorithm is to iterate through each element in the sorted 
 
 Problem 3:
 
+My program reverses a stack in place using recursion for the three different implementations: as an array, as a singly linked list, and as a doubly linked list. In all three, the same stack object is reversed, and no second stack or copy of the data is created. Reversal takes O(n) time in each version, and the only extra memory it uses is the recursive call stack. The push, pop, peek and is_empty operations all run in O(1) time.
+
+I used many of the bones from my Node class, SinglyLinkedList class, and DoublyLinkedList class from HW2, and edited as needed for this problem. 
+
+For the array stack, I store the items in a fixed-size list and keep a separate counter called _size, so the top of the stack is always at index _size - 1. The reversal uses a helper function called _reverse_range(left, right). It swaps the element at the left end with the element at the right end, then calls itself on the smaller range between them. It stops when left is no longer less than right, which means there is zero or one element left in the middle. Because it swaps two elements at a time, it only needs n/2 swaps and only recurses n/2 levels deep. I made the array resize by doubling its capacity when it fills up, and the total copying cost across n pushes is O(n), so each push is O(1) amortized. If it grew by a fixed amount each time instead, the total cost would be O(n²). I also set a popped slot back to None so the array does not hold onto a stale reference.
+
+For the singly linked list stack, I made the top of the stack the head of the list, so push and pop only touch the first node and never have to traverse the list. The reversal uses a helper called _reverse(node, prev). Each call saves the next node, points the current node backward at prev, and then recurses on the saved node. When the recursion walks past the end of the list, it returns prev, which is the old last node, and that node becomes the new head. This reuses the existing nodes and does not create any new ones.
+
+For the doubly linked list stack, I keep both a head pointer for the top of the stack and a tail pointer for the bottom. The helper _swap_links(node) swaps the prev and next pointers on one node and then recurses. After the swap, node.prev holds the old next node, so recursing on node.prev moves forward through the list. Once every node has been swapped, reverse() swaps the head and tail pointers so the stack points to the new top and bottom. The tail pointer makes that last step O(1) and lets me read the stack from the bottom without searching for it.
+
+I used private helper functions for the reversals because the public reverse() method takes no arguments, but recursion has to carry some information along, such as the current indices or the previous node. The helper holds that information, and reverse() stays a simple one-line call. I also wrote a recursive helper called _copy that is used both for resizing the array and for to_list, so that code only exists once. The to_list method returns the stack from bottom to top so it can be printed, and the linked list versions use a recursive helper called _collect for it. 
+
+Finally, push_all, show and run drive the demo code to show the reversal of all three implentations in action. 
 
 Problem 4:
 
