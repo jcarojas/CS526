@@ -28,7 +28,7 @@ def main():
             s += c * cnt.get(canon(-dy, dx), 0)
         total += s // 2
 
-    print(total)
+    print(f"The number of right triangles is: {total}")
 
 main()
 
