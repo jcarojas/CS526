@@ -1,0 +1,11 @@
+9
+A,B,C,D,E,F,G,H,I
+E,C,.,F,G,H,.,A,B
+F,.,B,A,I,E,C,D,.
+A,I,H,.,D,B,E,.,G
+H,E,.,G,F,A,D,B,C
+.,B,F,H,.,C,G,I,A
+G,A,C,I,B,.,H,E,.
+I,F,.,E,C,G,B,.,D
+B,H,G,.,A,I,.,C,E
+C,.,E,B,H,F,A,G,.
