@@ -1,3 +1,7 @@
+For all problems, I took each test file as standard input. For example, in the terminal for the snowfall problem, I used python3 snowfall.py < snowfall_input1.txt
+
+All of my sample runs are screenshots named: pandemic_testX for inputs 1-4, puzzle_game_test1through6 for all inputs 1-6, and snowfall_test1through7 for all inputs 1-7.
+
 Problem 1:
 
 The key observation is that A is a prefix-sum array, so it already stores running totals. The snowfall on days i, i+1, and i+2 is the total through day i+2 minus the total through day i-1.
