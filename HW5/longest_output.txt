@@ -1,0 +1,12 @@
+File Input: longest_seq1.txt
+Longest Sequence: 4
+File Input: longest_seq2.txt
+Longest Sequence: 7
+File Input: longest_seq3.txt
+Longest Sequence: 10
+File Input: longest_seq4.txt
+Longest Sequence: 39
+File Input: longest_seq5.txt
+Longest Sequence: 192
+File Input: longest_seq6.txt
+Longest Sequence: 1

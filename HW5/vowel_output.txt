@@ -1,0 +1,8 @@
+File Input: vowel_input1.txt
+The Number of Vowel combinations is: 6
+File Input: vowel_input2.txt
+The Number of Vowel combinations is: 8
+File Input: vowel_input3.txt
+The Number of Vowel combinations is: 0
+File Input: vowel_input4.txt
+The Number of Vowel combinations is: 193050000
