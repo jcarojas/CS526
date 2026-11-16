@@ -1,3 +1,12 @@
+The outposts for each problem is condensed into txt files. I used the following commands: 
+
+for i in 1 2 3; do python3 pqueue.py < merge_input$i.txt; done > pqueue_output1.txt
+for i in 5 6 7 8 9; do python3 pqueue.py < merge_input$i.txt; done > pqueue_output2.txt
+for i in 1 2 3 4 5 6 7 8 9 10; do python3 heap.py < heap_input$i.txt; done > heap_output.txt 
+for i in 1 2 3 4 5 6 7 8 9 10 11; do python3 running_median.py < median_input$i.txt; done > median_output.txt
+
+All inputs were read from standard input. and parsed appropriately.
+
 Problem 1: Priority Queue
 
 For this problem, the main idea is that I never put all the sales in the queue. Each log is already sorted, so the next sale overall has to be the front sale of one of the registers. I start by pushing the first sale from every register that has one, so the queue holds at most one entry per register. Then I repeat the same step until the queue is empty. I pop the smallest entry, add it to the output, and push the next sale from that same register if there is one. Since every pop is followed by at most one push from the register that was just popped, the queue can never go over k entries.
