@@ -1,4 +1,4 @@
-The outposts for each problem is condensed into txt files. I used the following commands: 
+The outputs for each problem is condensed into txt files. I used the following commands: 
 
 for i in 1 2 3; do python3 pqueue.py < merge_input$i.txt; done > pqueue_output1.txt
 for i in 5 6 7 8 9; do python3 pqueue.py < merge_input$i.txt; done > pqueue_output2.txt
